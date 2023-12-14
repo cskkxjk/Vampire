@@ -5,6 +5,7 @@ This is the official pytorch implementation of Regulating Intermediate 3D Featur
 ![Framework](./docs/framework.png)
 
 ## News
+- [2023-12-14] Demo release.
 - [2023-12-9] Vampire is accepted at AAAI 2024!! Code is comming soon.
 
 ## Demo
