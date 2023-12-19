@@ -75,6 +75,11 @@ python [EXP_PATH] --ckpt_path [CKPT_PATH] -v -b 8 --gpus 8
 python [EXP_PATH] --ckpt_path [CKPT_PATH] -t -b 8 --gpus 8
 ```
 
+### Benchmark
+|Exp | Occ. | Seg. | Det.| weights |
+| ------ | :---: | :---: | :---: |:---:|
+|[Vampire](src/exps/nuscenes/ablation/vampire2_r50_256x704_24e_lss_inpaintor_depth_semantic.py)| 25.8 |62.6|0.318|[Google-drive](https://drive.google.com/file/d/1OKwvWTLeWXTg0syZx-byJ62r6MI23xKR/view?usp=sharing)|
+
 ## Acknowledgements
 This project benefits from the following codebases. Thanks for their great works! 
 * [BEVDepth](https://github.com/Megvii-BaseDetection/BEVDepth)
