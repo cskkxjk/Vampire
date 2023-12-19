@@ -10,3 +10,74 @@ This is the official pytorch implementation of Regulating Intermediate 3D Featur
 
 ## Demo
 ![scene-0012-0018](./docs/scene-0012-0018.gif)
+
+## Quick Start
+### Installation
+**Step 0.** Install [pytorch](https://pytorch.org/) (v1.9.0).
+```
+conda create --name vampire python=3.7 -y
+conda activate vampire
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+```
+**Step 1.** Install [mmdet](https://github.com/open-mmlab/mmdetection) (2.26.0), [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) (0.29.1)[MMDetection3D](https://github.com/open-mmlab/mmdetection3d) (v1.0.0rc6).
+```
+pip install openmim==0.3.3
+mim install mmcv-full==1.6.2
+mim install mmdet==2.26.0
+mim install mmsegmentation==0.29.1
+git clone https://github.com/open-mmlab/mmdetection3d.git --branch v1.0.0rc6 --single-branch
+cd mmdetection3d
+pip install -e .
+cd ..
+```
+**Step 2.** Install requirements.
+```
+pip install -r requirements.txt
+python setup.py develop
+```
+
+
+### Data preparation
+**Step 0.** Download nuScenes official dataset and [occupancy trainval subset](https://github.com/CVPR2023-3D-Occupancy-Prediction/CVPR2023-3D-Occupancy-Prediction/tree/main) (including `gts.tar.gz` and `annotations.json`)
+
+**Step 1.** Unzip all data in your disk and Symlink the dataset root to `./data/`.
+```
+ln -s [nuscenes root] ./data/
+```
+The directory will be as follows.
+```
+Vampire/
+├── data/
+│   ├── nuScenes/
+│   │   ├── maps/
+│   │   ├── samples/
+│   │   ├── sweeps/
+|   |   ├── lidarseg/
+|   |   ├── panoptic/
+│   │   ├── v1.0-test/
+|   |   ├── v1.0-trainval/
+|   |   ├── gts/
+|   |   ├── annotations.json
+```
+**Step 2.** Prepare infos.
+```
+python scripts/gen_info.py
+```
+
+### Tutorials
+**Train on 8 NVIDIA GPUs with a total batch size of 8.**
+```
+python [EXP_PATH] --amp_backend native -b 8 --gpus 8
+```
+**Validation & Test (output submit file for nuscenes toolkit evaluation)**
+```
+python [EXP_PATH] --ckpt_path [CKPT_PATH] -v -b 8 --gpus 8
+python [EXP_PATH] --ckpt_path [CKPT_PATH] -t -b 8 --gpus 8
+```
+
+## Acknowledgements
+This project benefits from the following codebases. Thanks for their great works! 
+* [BEVDepth](https://github.com/Megvii-BaseDetection/BEVDepth)
+* [TPVFormer](https://github.com/wzzheng/TPVFormer)
+* [SurroundOcc](https://github.com/weiyithu/SurroundOcc)
+* [Occ3D](https://github.com/Tsinghua-MARS-Lab/Occ3D)
