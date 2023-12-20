@@ -79,11 +79,21 @@ python [EXP_PATH] --ckpt_path [CKPT_PATH] -v -b 8 --gpus 8
 python [EXP_PATH] --ckpt_path [CKPT_PATH] -t -b 8 --gpus 8
 ```
 
-### Benchmark
+### Pretrained Models
 |Exp | Occ. | Seg. | Det.| weights |
 | ------ | :---: | :---: | :---: |:---:|
 |[Vampire](src/exps/nuscenes/ablation/vampire2_r50_256x704_24e_lss_inpaintor_depth_semantic.py)| 25.8 |62.6|0.318|[Google-drive](https://drive.google.com/file/d/1OKwvWTLeWXTg0syZx-byJ62r6MI23xKR/view?usp=sharing)|
 
+## Citation
+If you use Vampire in your research, please cite our work by using the following BibTeX entry:
+```latex
+@article{xu2023regulating,
+      title={Regulating Intermediate 3D Features for Vision-Centric Autonomous Driving}, 
+      author={Xu, Junkai and Peng, Liang and Cheng, Haoran and Xia, Linxuan and Zhou, Qi and Deng, Dan and Qian, Wei and Wang, Wenxiao and Cai, Deng},
+      journal={arXiv preprint arXiv:2312.11837},
+      year={2023},
+}
+```
 ## Acknowledgements
 This project benefits from the following codebases. Thanks for their great works! 
 * [BEVDepth](https://github.com/Megvii-BaseDetection/BEVDepth)
