@@ -1,10 +1,14 @@
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2312.11837)
 # (AAAI2024) Regulating Intermediate 3D Features for Vision-Centric Autonomous Driving
 ## Introduction
 This is the official pytorch implementation of Regulating Intermediate 3D Features for Vision-Centric Autonomous Driving, In AAAI'24, Junkai Xu, Liang Peng, Haoran Cheng, Linxuan Xia, Qi Zhou, Dan Deng, Wei Qian, Wenxiao Wang and Deng Cai.
 
 ![Framework](./docs/framework.png)
 
+[[Paper]](https://arxiv.org/abs/2312.11837)  
 ## News
+- [2023-12-20] [Paper](https://arxiv.org/abs/2312.11837) is released on arxiv!
+- [2023-12-19] Code is released.
 - [2023-12-14] Demo release.
 - [2023-12-9] Vampire is accepted at AAAI 2024!! Code is comming soon.
 
